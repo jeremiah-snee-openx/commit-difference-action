@@ -6,9 +6,10 @@ secondaryBranch=$2
 
 commitDiffCount=''
 
-baseBranchPath=$(git branch -r | grep "$baseBranch" | xargs)
-secondaryBranchPath=$(git branch -r | grep "$secondaryBranch" | xargs)
+baseBranchPath=$(git for-each-ref --format='%(refname:short)' refs/remotes | grep "$baseBranch" | xargs)
+secondaryBranchPath=$(git for-each-ref --format='%(refname:short)' refs/remotes | grep "$secondaryBranch" | xargs)
 
-commitDiffCount=$(git log --oneline "$secondaryBranchPath" \^"$baseBranchPath" | wc -l)
+commitDiffCount=$(git log --oneline "$secondaryBranchPath" \^"$baseBranchPath" | wc -l | sed -e 's/^ *//')
+
 
 echo '{"commitDiffCount": "'"$commitDiffCount"'"}' 
