@@ -1,4 +1,4 @@
-# Get Commit Difference Count Between Two Branches Action
+# Branch Comparison Commit Detla Count Action
 
 This Action returns the commit difference count between two branches, given their branch names.
 
