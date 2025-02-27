@@ -1,5 +1,5 @@
-name: 'Get Commit Difference Count Between Two Branches'
-author: "Jessica Wilson"
+name: 'Branch Comparison Commit Detla Count Action'
+author: "jeremiah-snee-openx"
 description: 'Returns the commit difference count between two branches, given their branch names'
 inputs:
   base-branch:
